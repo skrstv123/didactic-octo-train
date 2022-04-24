@@ -11,7 +11,7 @@ virtualenv fypenv
 .\fypenv\bin\activate.bat
 ```
 3. install requirements
-``
+```
 pip install -r fypreq.txt
 ```
 4. create db
