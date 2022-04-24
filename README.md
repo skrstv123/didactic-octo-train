@@ -18,4 +18,4 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-![postman collection](https://www.getpostman.com/collections/6607fe981be201a45789)
+[postman collection](https://www.getpostman.com/collections/6607fe981be201a45789)
