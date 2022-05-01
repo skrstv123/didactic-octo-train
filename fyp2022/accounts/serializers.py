@@ -46,6 +46,7 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         # by default, create a customer user profile for each user
         user_profile = models.UserProfile(user=user, type='customer')
+        user_profile.added_by = user
         user_profile.save()
         return user
 

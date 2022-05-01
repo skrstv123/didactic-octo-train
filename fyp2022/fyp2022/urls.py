@@ -17,12 +17,14 @@ from xml.etree.ElementInclude import XINCLUDE
 from django.contrib import admin
 from django.urls import path, include
 from accounts import api_views as account_api_views
+from superresolution import api_views as superresolution_api_views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 
 router.register(r'users', account_api_views.UserViewSet)
 router.register(r'profiles', account_api_views.UserProfileViewSet)
+router.register(r'jobs', superresolution_api_views.CreateJobViewSet)
 
 urlpatterns = [
     path('auth/', include('dj_rest_auth.urls'), name='auth'),
