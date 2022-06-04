@@ -5,14 +5,14 @@ from .serializers import JobSerializer
 import uuid
 from rest_framework.permissions import IsAuthenticated, BasePermission
 
-class WriteOnlyPermission(BasePermission):
+class OnlyReadWritePermission(BasePermission):
     def has_permission(self, request, view):
-        return request.method == 'POST' or request.user.is_superuser
+        return request.method in ['POST', 'GET']
 
 class CreateJobViewSet(ModelViewSet):
     queryset = Job.objects.all()
     serializer_class = JobSerializer
-    permission_classes = [IsAuthenticated, WriteOnlyPermission]
+    permission_classes = [IsAuthenticated, OnlyReadWritePermission]
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)

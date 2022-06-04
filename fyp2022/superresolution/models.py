@@ -18,7 +18,8 @@ class Job(models.Model):
 
     STATUS_CHOICES = (
         ("pending", "Pending"),
-        ("done", "Done"),
+        ("processed", "Processed"),
+        ("sent", "Sent"),
         ("failed", "Failed"),
     )
 
@@ -29,3 +30,4 @@ class Job(models.Model):
     job_type = models.CharField(default="image", choices = JOB_TYPE_CHOICES , max_length=32)
     status = models.CharField(default="pending", choices= STATUS_CHOICES, max_length=32)
     input_file = models.CharField(max_length=255, default="")
+    out_email = models.CharField(max_length=255, default="", blank=True, null=True)

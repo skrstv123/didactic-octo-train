@@ -16,8 +16,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -35,9 +33,14 @@ env = environ.Env(
 # reading .env file
 environ.Env.read_env()
 
+SITE_ID=1
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env("SECRET_KEY")
 # Application definition
+EMAIL_SENDER = env("EMAIL_SENDER")
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = env("EMAIL_PORT")
+EMAIL_PASSWORD = env("EMAIL_PASSWORD")
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -49,11 +52,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth', 
-    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'dj_rest_auth.registration',
+    'django.contrib.sites',
     'accounts',  
     'superresolution',   
 ]
