@@ -19,7 +19,11 @@ pip install -r fypreq.txt
 cd fyp2022
 python manage.py migrate
 ```
-5. start server
+5.  create superuser
+```
+python manage.py createsuperuser
+```
+6. start server
 ```
 python manage.py runserver
 ```
