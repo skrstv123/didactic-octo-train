@@ -29,4 +29,5 @@ python manage.py runserver
 ```
 
 #### endpoints
-[postman collection](https://www.getpostman.com/collections/6607fe981be201a45789)
+[postman collection](https://www.getpostman.com/collections/6a76aa6ce916f0101fe3)
+
