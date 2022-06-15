@@ -1,7 +1,6 @@
-# didactic-octo-train
+# SRGAN API
 
-## under development
-#### to begin development : 
+#### to begin development/running the API locally : 
 1. Clone repo
 2. create virtal env
 ```
@@ -28,6 +27,17 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-#### endpoints
+#### processing a job:
+```
+python manage.py process_jobs
+```
+
+## Using the video converter
+open the srgan notebook in Google colab and follow the instructions in notebook
+
+to make the api also process videos, you can use method defined in notebook to create a command
+
+
+#### API documentation 
 [postman collection](https://www.getpostman.com/collections/6a76aa6ce916f0101fe3)
 
