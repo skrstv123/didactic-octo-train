@@ -1,4 +1,5 @@
 # SRGAN API
+this api currently will respond asynchronously to a superresolve request. it will send the result to user's email.
 
 #### to begin development/running the API locally : 
 1. Clone repo
