@@ -29,7 +29,7 @@ class Command(BaseCommand):
             job_to_process.status,
             job_to_process.input_file, sep="\t")
 
-        jobs = Job.objects.filter(status__in = ['pending', 'processed']).order_by("-added_at")
+        jobs = Job.objects.filter(status__in = ['pending', 'processed']).order_by("added_at")
         if jobs.exists():
             job_to_process = jobs.first()
             printstats(job_to_process)

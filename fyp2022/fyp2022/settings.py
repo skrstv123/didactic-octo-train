@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'django.contrib.sites',
     'accounts',  
-    'superresolution',   
+    'superresolution',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -157,6 +158,11 @@ REST_AUTH_SERIALIZERS = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=7),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=15),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=15),
+}
+
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
 }

@@ -14,6 +14,18 @@ class CreateJobViewSet(ModelViewSet):
     serializer_class = JobSerializer
     permission_classes = [IsAuthenticated, OnlyReadWritePermission]
 
+    
+    # list job submmitted by current user
+    def list(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        serializer = self.get_serializer(
+            queryset.filter(
+                job_submitted_by = self.request.user),
+                many=True
+            )
+        return Response(serializer.data)
+
+
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
